@@ -1,0 +1,6 @@
+name = "XS-Closure-Example"
+# badges = ["travis"]
+authority="cpan:CODEHEX"
+
+module_maker="ModuleBuildTiny"
+
