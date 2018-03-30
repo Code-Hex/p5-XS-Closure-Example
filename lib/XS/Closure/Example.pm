@@ -8,6 +8,10 @@ our $VERSION = "0.01";
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
+require Exporter;
+our @ISA = qw/Exporter/;
+our @EXPORT = qw/make_closure make_closure_c/;
+
 1;
 __END__
 
@@ -15,15 +19,25 @@ __END__
 
 =head1 NAME
 
-XS::Closure::Example - It's new $module
+XS::Closure::Example - It's example module for closure
 
 =head1 SYNOPSIS
 
+    use feature 'say';
     use XS::Closure::Example;
+
+    my $i = 0;
+    my $c = make_closure($i);
+    say $c->(); # 0
+
+    $i++;
+
+    my $c_c = make_closure_c($i);
+    say $c_c->(); # 1
 
 =head1 DESCRIPTION
 
-XS::Closure::Example is ...
+XS::Closure::Example
 
 =head1 LICENSE
 
